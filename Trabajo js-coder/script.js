@@ -1,35 +1,35 @@
 const iphones = [
 
  {
-  modelo: "Iphone 8",
+  modelo: "iphone 8",
   precio: "85.000",
   bateria: "1.821 mAh",
   almacenamiento: "64GB"
  },
 
   {
-  modelo: "Iphone xr",
+  modelo: "iphone xr",
   precio: "155.000",
   bateria: "2.942 mAh",
   almacenamiento: "64GB"
  },
 
   {
-  modelo: "Iphone 11",
+  modelo: "iphone 11",
   precio: "190.000",
   bateria: "3.110 mAh",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Iphone 12 pro max",
+  modelo: "iphone 12 pro max",
   precio:  "270.000",
   bateria: "3.687 mAh",
   almacenamiento: "256GB"
  },
 
   {
-  modelo: "Iphone 13 mini",
+  modelo: "iphone 13 mini",
   precio: "320.000",
   bateria: "2.438 mAh",
   almacenamiento: "256GB"
@@ -40,14 +40,14 @@ const iphones = [
 const samsungs = [
 
  {
-  modelo: "Samsung Galaxy A22",
+  modelo: "samsung Galaxy A22",
   precio: "52.999",
   bateria: "5.000 MAH",
   almacenamiento: "64GB"
  },
 
   {
-  modelo: "Samsung Galaxy S22 Ultra",
+  modelo: "samsung Galaxy S22 Ultra",
   precio: "264.999",
   bateria: "2.942 mAh",
   almacenamiento: "256GB"
@@ -61,14 +61,14 @@ const samsungs = [
  },
 
   {
-  modelo: "Samsung Galaxy A53",
+  modelo: "samsung Galaxy A53",
   precio:  "133.999",
   bateria: "5.000 mAh ",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Samsung Galaxy A32",
+  modelo: "samsung Galaxy A32",
   precio: "73.999",
   bateria: "5.000 mAh",
   almacenamiento: "128GB"
@@ -79,35 +79,35 @@ const samsungs = [
 const motorolas = [
 
  {
-  modelo: "Motorola Edge 30",
+  modelo: "motorola Edge 30",
   precio: "78.999",
   bateria: "4.030 mAh",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Motorola Moto G22",
+  modelo: "motorola Moto G22",
   precio: "45.999",
   bateria: "5.000 mAh",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Motorola Moto G71",
+  modelo: "motorola Moto G71",
   precio: "65.999",
   bateria: "5.000 mAh",
   almacenamiento: "64GB"
  },
 
   {
-  modelo: "Motorola moto e40",
+  modelo: "motorola moto e40",
   precio:  "40.999",
   bateria: "5.000 mAh",
   almacenamiento: "64GB"
  },
 
   {
-  modelo: "Motorola Moto G82",
+  modelo: "motorola Moto G82",
   precio: "74.999",
   bateria: "5.000 mAh",
   almacenamiento: "128GB"
@@ -118,35 +118,35 @@ const motorolas = [
 const xiaomis = [
 
  {
-  modelo: "Xiaomi Redmi Note 11",
+  modelo: "xiaomi Redmi Note 11",
   precio: "78.999",
   bateria: "5.000 mAh",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Xiaomi Redmi 9A",
+  modelo: "xiaomi Redmi 9A",
   precio: "52.999",
   bateria: "5.000 mAh",
   almacenamiento: "32GB"
  },
 
   {
-  modelo: "Xiaomi Pocophone Poco M4 Pro",
+  modelo: "xiaomi Pocophone Poco M4 Pro",
   precio: "99.999",
   bateria: "5.000 mAh",
   almacenamiento: "256GB"
  },
 
   {
-  modelo: "Xiaomi Mi 11 Lite",
+  modelo: "xiaomi Mi 11 Lite",
   precio:  "173.500",
   bateria: "4.250 mAh",
   almacenamiento: "128GB"
  },
 
   {
-  modelo: "Xiaomi Mi 11T Pro ",
+  modelo: "xiaomi Mi 11T Pro ",
   precio: "215.000",
   bateria: "5.000 mAh",
   almacenamiento: "256GB"
@@ -208,3 +208,5 @@ console.log (productoMotorola);
 const productoXiaomi = xiaomis.filter ((celular) => celular.modelo.includes(preguntaProducto));
 
 console.log (productoXiaomi);
+
+
