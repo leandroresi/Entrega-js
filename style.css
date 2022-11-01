@@ -201,3 +201,14 @@ span:nth-child(2){
     margin-top: 20px;
     font-size: 18px;
 }
+
+.section-carrito{
+    width: 100%;
+    margin-top: 90px;
+}
+
+
+.carrito{
+    margin: 65px 95px;
+    background-color: var(--color-fondo2);
+}

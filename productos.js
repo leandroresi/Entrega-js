@@ -1,4 +1,4 @@
-const iphones = [
+const celulares = [
 
   {
   id: 1,
@@ -36,14 +36,10 @@ const iphones = [
   foto: "https://http2.mlstatic.com/D_NQ_NP_2X_873253-MLA47782477965_102021-F.webp"
  },
 
+
  
-
-];
-
-const samsungs = [
-
   {
-  id: 1,  
+  id: 5,  
   modelo: "samsung Galaxy S22 Ultra",
   precio: "$264.999",
   bateria: "2.942 mAh",
@@ -52,7 +48,7 @@ const samsungs = [
  },
 
   {
-  id: 2,  
+  id: 6,  
   modelo: "Samsung Galaxy S21 FE",
   precio: "$174.999",
   bateria: "4.500 mAh",
@@ -61,7 +57,7 @@ const samsungs = [
  },
 
   {
-  id: 3,  
+  id: 7,  
   modelo: "samsung Galaxy A53",
   precio:  "$133.999",
   bateria: "5.000 mAh ",
@@ -70,20 +66,17 @@ const samsungs = [
  },
 
   {
-  id: 4,  
+  id: 8,  
   modelo: "samsung Galaxy A32",
   precio: "$73.999",
   bateria: "5.000 mAh",
   almacenamiento: "128GB",
   foto: "https://http2.mlstatic.com/D_NQ_NP_2X_617385-MLA48697556229_122021-F.webp"
  },
-
-];
-
-const motorolas = [
-
+ 
+ 
  {
-  id: 1,  
+  id: 9,  
   modelo: "motorola Edge 30",
   precio: "$78.999",
   bateria: "4.030 mAh",
@@ -92,7 +85,7 @@ const motorolas = [
  },
 
   {
-  id: 2,  
+  id: 10,  
   modelo: "motorola Moto G22",
   precio: "$45.999",
   bateria: "5.000 mAh",
@@ -101,7 +94,7 @@ const motorolas = [
  },
 
   {
-  id: 3,  
+  id: 11,  
   modelo: "motorola Moto G71",
   precio: "$65.999",
   bateria: "5.000 mAh",
@@ -110,7 +103,7 @@ const motorolas = [
  },
 
   {
-  id: 4,  
+  id: 12,  
   modelo: "motorola moto e40",
   precio:  "$40.999",
   bateria: "5.000 mAh",
@@ -118,12 +111,10 @@ const motorolas = [
   foto: "https://http2.mlstatic.com/D_NQ_NP_2X_863352-MLA48464368267_122021-F.webp"
  },
 
-];
 
-const xiaomis = [
-
+ 
  {
-  id: 1,  
+  id: 13,  
   modelo: "xiaomi Redmi Note 11",
   precio: "$78.999",
   bateria: "5.000 mAh",
@@ -132,7 +123,7 @@ const xiaomis = [
  },
 
   {
-  id: 2,  
+  id: 14,  
   modelo: "xiaomi Redmi 9A",
   precio: "$52.999",
   bateria: "5.000 mAh",
@@ -141,7 +132,7 @@ const xiaomis = [
  },
 
   {
-  id: 3,  
+  id: 15,  
   modelo: "xiaomi Pocophone Poco M4 Pro",
   precio: "$99.999",
   bateria: "5.000 mAh",
@@ -150,12 +141,11 @@ const xiaomis = [
  },
 
   {
-  id: 4,  
+  id: 16,  
   modelo: "xiaomi Mi 11T Pro ",
   precio: "$215.000",
   bateria: "5.000 mAh",
   almacenamiento: "256GB",
   foto: "https://http2.mlstatic.com/D_NQ_NP_2X_845010-MLA48328770801_112021-F.webp"
  },
-
 ];
