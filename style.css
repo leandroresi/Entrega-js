@@ -32,17 +32,6 @@ span:nth-child(2){
     color: var(--color-detalles);
 }
 
-.carrito{
-
-}
-
-.img-carrito{
-    width: 80px;
-    height: 70px;
-    color: white ;
-}
-
-
 .contain{
     width: 100%;
     height: calc(100% - 80px);
@@ -204,11 +193,21 @@ span:nth-child(2){
 
 .section-carrito{
     width: 100%;
-    margin-top: 90px;
 }
 
-
 .carrito{
-    margin: 65px 95px;
-    background-color: var(--color-fondo2);
+    width: 100%;
+    margin: 125px 95px;
+}
+
+.h2-carrito{
+    font-size: 65px;
+    color:var(--color-texto);
+    margin-left: 155px;
+}
+
+.img-carrito{
+    height: 35px;
+   margin: 75px 200px;
+    
 }
