@@ -25,19 +25,19 @@ function cardCelulares (){
 cardCelulares ();
 
 function agregarAlCarrito(celularAComprar){
-   carrito.push(celularAComprar.id,celularAComprar.modelo,celularAComprar.precio);
+   carrito.push(celularAComprar);
    console.table(carrito);
-
-   document.getElementsByClassName("carrito-productos").innerHTML += 
-   `<div class="card col-sm-3">
-            <img src= ${celularAComprar.foto} class="card-img-top" alt="...">
+    alert("producto" + celularAComprar.modelo + "agregado al carrito!!");
+   document.getElementById("carrito-productos").innerHTML += 
+   ` 
+   <div class="card col-sm-2">
+            <img src=${celularAComprar.foto} class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${celularAComprar.modelo} </h5>
-              <p class="card-text">${celular.bateria} <br> ${celular.almacenamiento} <br> ${celular.precio} </p>
+              <p class="card-text">${celularAComprar.bateria} <br> ${celularAComprar.almacenamiento} <br> ${celularAComprar.precio} </p>
             </div>
           </div>
    `
-
    localStorage.setItem("carrito",JSON.stringify(carrito))
  
 }
