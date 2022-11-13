@@ -13,23 +13,49 @@
 body{
     background-color: var(--color-fondo);
 }
-header{
+
+.img-fondo-principal{
     width: 100%;
-    height: 80px;
-    background-color:var(--color-fondo);
+    height: 100vh;
 }
 
-.header-h1{
+.fondo-principal{
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.fondo-negro{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    background-color:#25252589 ;
+}
+
+.fondo-negro-h1{
     padding:15px 100px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 65px;
 }
 
 span:nth-child(1){
- color: var(--color-texto);
+ color:var(--color-fondo);
 }
 
 span:nth-child(2){
     color: var(--color-detalles);
+}
+
+.fondo-negro-p{
+    color: var(--color-fondo);
+    padding: 15px;
+    text-align: center;
+    width:570px;
+    margin-left: 450px;
+    font-size: 25px;
 }
 
 .contain{
@@ -46,6 +72,8 @@ span:nth-child(2){
     display: grid;
     grid-template-columns: 2fr 2fr;
     margin-top: 55px;
+    background-color: #F7F7F7;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
 
@@ -53,7 +81,7 @@ span:nth-child(2){
     grid-column-start: 1;
     margin-top: 100px;
     font-size: 60px;
-    color: var(--color-texto);
+    color:var;
     
 
 }
@@ -63,7 +91,7 @@ span:nth-child(2){
     padding-top: 20px;
     line-height: 30px;
     font-size: 20px;
-    color: var(--color-fondo2);
+    color: var(--color-texto);
 }
 
 
@@ -89,8 +117,8 @@ span:nth-child(2){
 
 .title-productos-h2{
     font-size: 60px;
-    color: var(--color-fondo);
-
+    color: var(--color-texto);
+    margin: 45px;
     
 }
 
@@ -112,7 +140,7 @@ span:nth-child(2){
 .clientes-h2{
     text-align: center;
     font-size: 60px;
-    color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 .lista-clientes{
@@ -203,11 +231,42 @@ span:nth-child(2){
 .h2-carrito{
     font-size: 65px;
     color:var(--color-texto);
-    margin-left: 155px;
 }
 
 .img-carrito{
     height: 35px;
-   margin: 75px 200px;
+    margin:75px;
     
 }
+
+
+.div-tabla{
+    margin-left: 430px;
+}
+
+#finalizarcompra{
+    font-size: 19px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: var(--color-detalles);
+    color:var(--color-fondo);
+}   
+
+
+/*clases de las cartas de productos*/
+
+#celulares{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.caja-productos{
+    width: 400px;
+    border: 2px solid var(--color-texto);
+}
+
+.img-producto{
+    width: 250px;
+    margin: auto;
+}
+ 

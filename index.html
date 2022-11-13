@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Primera pre entrega</title>
 </head>
 <body>
+
+ <div class="img-fondo-principal">
+    <img class="fondo-principal" src="./img/fondo-principal.jpg" alt="">
+    <div class="fondo-negro"> <h1 class="fondo-negro-h1"><span>Tecno</span><span>rojo</span></h1>
+    <p class="fondo-negro-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum repellat dolore dolor cupiditate distinctio nobis recusandae nihil eaque, aliquid pariatur debitis. Animi autem asperiores doloremque.</p></div>
+   
+ </div>   
     
-<header>
 
-    <h1 class="header-h1"><span>Tecno</span><span>rojo</span></h1>
 
-</header>
 
 <section class="contain">
 
@@ -49,7 +54,7 @@
         
      <div class="div-title">
         
-        <h2 class="title-productos-h2"><span>Celulares</span> <span>En Stock</span></h2>
+        <h2 class="title-productos-h2">Celulares En Stock</h2>
     
      </div>
 
@@ -68,7 +73,7 @@
 
 <section class="clientes">
 
-  <h2 class="clientes-h2"><span>Clie</span><span>ntes</span></h2>
+  <h2 class="clientes-h2">Clientes</h2>
 
     <div class="lista-clientes">
 
@@ -124,20 +129,43 @@
 
     <div class="carrito">
         
-        <h2 class="h2-carrito">Carrito</h2>
+        <h2 class="h2-carrito"><img class="img-carrito" src="../img/carrito.svg" alt=""> Carrito: </h2>
 
-        <img class="img-carrito" src="../img/carrito.svg" alt="">
+        <div class="div-tabla">
 
-        <div id="carrito-productos">
+            <table style="width: calc(100% - 500px)" class="table table-striped">
 
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>MODELO</th>
+                        <th>PRECIO</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-productos">
+                      
+                </tbody>
+            </table>
+            <h3 id="totalCarrito">Total a pagar $:</h3>
+
+            <br> 
+
+            <button id="finalizarcompra">Finalizar Compra</button> 
+            
         </div>
+
+    
     </div>
 
 </section>
 
 <script src="./productos.js"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 <script src="./script.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
