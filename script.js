@@ -51,7 +51,7 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.id}</td>
        <td>${celularAComprar.modelo}</td>
        <td>${celularAComprar.precio}</td>
-        <td> <button id="trash-icon" onclick="eliminar(evento)"> <i class='bx bx-trash-alt' style="font-size:25px" ></i> </button> </td>
+        <td> <button id="trash-icon"> 🗑️ </button> </td>
     </tr>
    `
    //muestra las caracteristicas de los objetos en el local storage
@@ -100,24 +100,13 @@ setTimeout(() =>{
 localStorage.removeItem("carrito");
 
 }
-
-function eliminarDelCarrito (evento){
-  console.log(evento)
-  let trCarrito = document.getElementById("tr-producto");
-
-  let id =  trCarrito.children[0].innerText;
-
-  let encontrarProducto = carrito.findIndex(celular => celular.id == id);
-
-  carrito.splice(encontrarProducto,1);
-
-  trCarrito.remove();
-
-   totalCarrito = carrito.reduce((acumulador,celu) => acumulador + celu.precio,0);
-   let total = document.getElementById("totalCarrito");
-   total.innerText="total a pagar : "+totalCarrito;
-
-   
-  localStorage.setItem("carrito",JSON.stringify(carrito))
- 
+  
+iconTrash.onclick = () => {
+  document.getElementById("tr-producto").innerHTML = "";
 }
+   
+ totalCarrito = carrito.reduce((acumulador,celu) => acumulador + celu.precio,0);
+   let total = document.getElementById("totalCarrito");
+   total.innerText="total a pagar $: "+totalCarrito;
+ 
+ localStorage.setItem("carrito",JSON.stringify(carrito))
