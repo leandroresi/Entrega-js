@@ -1,8 +1,10 @@
 let carrito = [];
 let contenedor = document.getElementById("celulares");
 let btnFinalizar = document.getElementById("finalizarcompra");
-let iconTrash = document.getElementById("trash-icon");
+let iconTrash = document.querySelectorAll(".trash-icon");
 let trCarrito = document.getElementById("tr-producto");
+let productoCarrito = localStorage.getItem("carrito");
+productoCarrito = JSON.parse(productoCarrito);
 //funcion para mostrar la informacion de los productos agregados en el array
 
 function cardCelulares (){
@@ -51,7 +53,7 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.id}</td>
        <td>${celularAComprar.modelo}</td>
        <td>${celularAComprar.precio}</td>
-        <td> <button id="trash-icon"> 🗑️ </button> </td>
+        <td> <button class="trash-icon" id="${celularAComprar.id} "> 🗑️ </button> </td>
     </tr>
    `
    //muestra las caracteristicas de los objetos en el local storage
@@ -63,7 +65,39 @@ function agregarAlCarrito(celularAComprar){
    let total = document.getElementById("totalCarrito");
    total.innerText="total a pagar : "+totalCarrito;
  
+   eliminarProductoCarrito ();
+   
 }
+
+
+function eliminarProductoCarrito (){
+ 
+ document.querySelectorAll(".trash-icon");
+
+ iconTrash.forEach(boton => {
+    boton.addEventListener("click", eliminarProducto);
+ })
+}
+
+function eliminarProducto(e){
+  const idBoton = document.querySelectorAll(".trash-icon");
+  const index = productoCarrito.findIndex(celular => celular.id ===idBoton);
+
+  productoCarrito.splice(index,1);
+
+  agregarAlCarrito();
+
+  localStorage.setItem("carrito", JSON.stringify(productoCarrito));
+
+}
+
+function actualizarTotal() {
+const totalCalculado = productoCarrito.reduce((acc,celular) => acc + productoCarrito.precio,0);
+total.innerText=`$${totalCalculado}`;
+}
+
+
+
 
 //limpia el carrito al apretar finalizar compra
 
@@ -94,19 +128,9 @@ setTimeout(() =>{
   icon: 'success',
   title: 'Informacion enviada al email, gracias por su compra',
   showConfirmButton: false,
-})}, 5000);
+})}, 12000);
 
 //remueve los datos del storage al finalizar la compra
 localStorage.removeItem("carrito");
 
 }
-  
-iconTrash.onclick = () => {
-  document.getElementById("tr-producto").innerHTML = "";
-}
-   
- totalCarrito = carrito.reduce((acumulador,celu) => acumulador + celu.precio,0);
-   let total = document.getElementById("totalCarrito");
-   total.innerText="total a pagar $: "+totalCarrito;
- 
- localStorage.setItem("carrito",JSON.stringify(carrito))
