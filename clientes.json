@@ -1,0 +1,21 @@
+{
+    "clientes": [
+      {
+        "nombre":"Juan Rogriguez",
+        "comentario":"La verdad es que el producto vino en excelente estado"
+      },
+      {
+        "nombre":"Nicolas Torboli",
+        "comentario":"Me encanto el producto y la variedad de formas de pago que tienen"
+      },
+      {
+        "nombre":"Franco Mengarelli",
+        "comentario":"Quede enamorado de mi nuevo celular, recomendadisimo "
+      },
+      {
+        "nombre":"Sebastian Mancinelli",
+        "comentario":"10/10 el local, muy buena atencion y excelentes productos"
+      }
+    
+    ]
+}

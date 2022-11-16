@@ -1,7 +1,7 @@
 let carrito = [];
 let contenedor = document.getElementById("celulares");
 let btnFinalizar = document.getElementById("finalizarcompra");
-let iconTrash = document.querySelectorAll(".trash-icon");
+let iconTrash = document.getElementById("trash-icon");
 let trCarrito = document.getElementById("tr-producto");
 let productoCarrito = localStorage.getItem("carrito");
 productoCarrito = JSON.parse(productoCarrito);
@@ -53,50 +53,30 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.id}</td>
        <td>${celularAComprar.modelo}</td>
        <td>${celularAComprar.precio}</td>
-        <td> <button class="trash-icon" id="${celularAComprar.id} "> 🗑️ </button> </td>
+        <td> <button id="trash-icon ${celularAComprar.id} "> 🗑️ </button> </td>
     </tr>
    `
+
    //muestra las caracteristicas de los objetos en el local storage
 
     localStorage.setItem("carrito",JSON.stringify(carrito))
 
     //suma los precios de los productos para dar el total de la compra
    totalCarrito = carrito.reduce((acumulador,celu) => acumulador + celu.precio,0);
-   let total = document.getElementById("totalCarrito");
+   const total = document.getElementById("totalCarrito");
    total.innerText="total a pagar : "+totalCarrito;
  
-   eliminarProductoCarrito ();
    
 }
 
 
-function eliminarProductoCarrito (){
- 
- document.querySelectorAll(".trash-icon");
+function eliminarProducto(id) {
+  const celuId = id
 
- iconTrash.forEach(boton => {
-    boton.addEventListener("click", eliminarProducto);
- })
-}
-
-function eliminarProducto(e){
-  const idBoton = document.querySelectorAll(".trash-icon");
-  const index = productoCarrito.findIndex(celular => celular.id ===idBoton);
-
-  productoCarrito.splice(index,1);
+  carrito = carrito.filter((celu)=> celu.id !== celuId)
 
   agregarAlCarrito();
-
-  localStorage.setItem("carrito", JSON.stringify(productoCarrito));
-
 }
-
-function actualizarTotal() {
-const totalCalculado = productoCarrito.reduce((acc,celular) => acc + productoCarrito.precio,0);
-total.innerText=`$${totalCalculado}`;
-}
-
-
 
 
 //limpia el carrito al apretar finalizar compra
@@ -134,3 +114,29 @@ setTimeout(() =>{
 localStorage.removeItem("carrito");
 
 }
+
+
+//datos de los clientes
+
+function datosClientesJson(){
+  const URLJSON = "./clientes.json";
+  fetch(URLJSON)
+     .then(res => res.json() )
+     .then(datosRecibidos =>{
+       const clientesDatos = datosRecibidos.clientes;
+       clientesDatos.forEach(cliente => {
+        document.getElementById("lista-clientes").innerHTML += `
+         <div class="cliente">
+
+            <h2 class="info-h2"><img class="info-img" src="../img/icon-person.svg" alt=""></i></h2>
+
+            <div class="info-p"> <h2 class="cliente-nombre"> ${cliente.nombre} </h2> <br> <p class="cliente-comentario"> ${cliente.comentario} </p></div>
+        
+        </div>`
+
+       })
+     })
+}
+
+
+datosClientesJson();
