@@ -302,14 +302,15 @@ span:nth-child(2){
 }
 
 .div-titulo {
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #f7f7f7;
+    border-bottom: 1px solid var(--color-texto);
+    background-color: var(--color-texto);
     padding: 20px 40px;
 }
 
 .div-titulo h2 {
     margin: 0;
     font-size: 25px;
+    color: var(--color-fondo);
 }
 
 .form {
