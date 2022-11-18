@@ -54,30 +54,40 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.id}</td>
        <td>${celularAComprar.modelo}</td>
        <td>${celularAComprar.precio}</td>
-        <td> <button id="trash-icon ${celularAComprar.id} "> 🗑️ </button> </td>
+        <td> <button id="trash-icon"  onclick="eliminar(event)"> 🗑️ </button> </td>
     </tr>
    `;
      totalCarrito = carrito.reduce((acumulador,celular) => acumulador + celular.precio,0);
     let precioTotal = document.getElementById("total");
-    precioTotal.innerText ="Total a pagar $:"+totalCarrito;
+    precioTotal.innerText ="Total a pagar : $"+ totalCarrito;
   
 
    //muestra las caracteristicas de los objetos en el local storage
 
     localStorage.setItem("carrito",JSON.stringify(carrito))
-
   
 }
 
 
+function eliminarProducto() {
 
+  let fila = document.getElementById("tr-producto");
+  console.log(fila);
+  let id = fila.children[0].innerText;
+  console.log(id);
+  let indice = carrito.findIndex(producto => producto.id == id);
+  console.log(indice);
 
-function eliminarProducto(id) {
-  const celuId = id
+  carrito.splice(indice,1);
+  console.table(carrito);
 
-  carrito = carrito.filter((celu)=> celu.id !== celuId)
+  fila.remove();
+  
+  let precioAcumulado = carrito.reduce ((acumulador,producto) => acumulador+producto.precio,0);
+  precioTotal.innerText="Total a pagar:$"+ precioAcumulado;
 
-  agregarAlCarrito();
+  localStorage.setItem("carrito",JSON.stringify(carrito));
+
 }
 
 
@@ -88,8 +98,9 @@ btnFinalizar.onclick = () => {
 
   //elimina los productos del carrito y el total
    document.getElementById("carrito-productos").innerHTML = "";
-   document.getElementById("totalCarrito").innerText = "";
 
+
+  
 
 //cartel de gracias por la compra
 setTimeout(() =>{
@@ -100,9 +111,18 @@ setTimeout(() =>{
   showConfirmButton: false,
 })}, 2000);
 
+  
+
 //remueve los datos del storage al finalizar la compra
 localStorage.removeItem("carrito");
 
+actualizarTotal();
+
+}
+
+
+function actualizarTotal() {
+     document.getElementById("totalCarrito").innerText = "";
 }
 
 
