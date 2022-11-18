@@ -1,4 +1,5 @@
 let carrito = [];
+let totalCarrito;
 let contenedor = document.getElementById("celulares");
 let btnFinalizar = document.getElementById("finalizarcompra");
 let iconTrash = document.getElementById("trash-icon");
@@ -55,19 +56,20 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.precio}</td>
         <td> <button id="trash-icon ${celularAComprar.id} "> 🗑️ </button> </td>
     </tr>
-   `
+   `;
+     totalCarrito = carrito.reduce((acumulador,celular) => acumulador + celular.precio,0);
+    let precioTotal = document.getElementById("total");
+    precioTotal.innerText ="Total a pagar $:"+totalCarrito;
+  
 
    //muestra las caracteristicas de los objetos en el local storage
 
     localStorage.setItem("carrito",JSON.stringify(carrito))
 
-    //suma los precios de los productos para dar el total de la compra
-   totalCarrito = carrito.reduce((acumulador,celu) => acumulador + celu.precio,0);
-   const total = document.getElementById("totalCarrito");
-   total.innerText="total a pagar : "+totalCarrito;
- 
-   
+  
 }
+
+
 
 
 function eliminarProducto(id) {
@@ -89,26 +91,14 @@ btnFinalizar.onclick = () => {
    document.getElementById("totalCarrito").innerText = "";
 
 
-   //cartel de sweet alert para llenar con el mail para la info de la compra
-  const { value: email } = Swal.fire({
-  title: 'Ingresa tu email para enviarte los datos de tu compra',
-  input: 'email',
-  inputLabel: '',
-  inputPlaceholder: 'Ingresa tu email'
-})
-
-if (email) {
-  Swal.fire(`Entered email: ${email}`)
-}
-
-//cartel luego de cargar el mail
+//cartel de gracias por la compra
 setTimeout(() =>{
   Swal.fire({
   position: 'top-end',
   icon: 'success',
-  title: 'Informacion enviada al email, gracias por su compra',
+  title: 'Gracias por su compra',
   showConfirmButton: false,
-})}, 12000);
+})}, 2000);
 
 //remueve los datos del storage al finalizar la compra
 localStorage.removeItem("carrito");
