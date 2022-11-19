@@ -1,6 +1,8 @@
 let carrito = [];
 let totalCarrito;
+let total= 0;
 let contenedor = document.getElementById("celulares");
+let precioTotal = document.getElementById("total");
 let btnFinalizar = document.getElementById("finalizarcompra");
 let iconTrash = document.getElementById("trash-icon");
 let trCarrito = document.getElementById("tr-producto");
@@ -54,7 +56,7 @@ function agregarAlCarrito(celularAComprar){
        <td>${celularAComprar.id}</td>
        <td>${celularAComprar.modelo}</td>
        <td>${celularAComprar.precio}</td>
-        <td> <button id="trash-icon"  onclick="eliminar(event)"> 🗑️ </button> </td>
+        <td> <button id="trash-icon"  onclick="eliminarProducto(event)"> 🗑️ </button> </td>
     </tr>
    `;
      totalCarrito = carrito.reduce((acumulador,celular) => acumulador + celular.precio,0);
@@ -65,13 +67,14 @@ function agregarAlCarrito(celularAComprar){
    //muestra las caracteristicas de los objetos en el local storage
 
     localStorage.setItem("carrito",JSON.stringify(carrito))
+    
   
 }
 
 
-function eliminarProducto() {
+function eliminarProducto(ev) {
 
-  let fila = document.getElementById("tr-producto");
+  let fila = ev.target.parentElement.parentElement;
   console.log(fila);
   let id = fila.children[0].innerText;
   console.log(id);
@@ -79,16 +82,27 @@ function eliminarProducto() {
   console.log(indice);
 
   carrito.splice(indice,1);
+  
   console.table(carrito);
 
   fila.remove();
+
+  //actualizar el precio
   
-  let precioAcumulado = carrito.reduce ((acumulador,producto) => acumulador+producto.precio,0);
-  precioTotal.innerText="Total a pagar:$"+ precioAcumulado;
+  let precioAcumulado = carrito.reduce ((acumulador,producto) => acumulador-producto.precio,0);
+
+
+  precioTotal.innerText ="Total a pagar : $"+ precioAcumulado;
+
+ console.log(total);
+
+
 
   localStorage.setItem("carrito",JSON.stringify(carrito));
 
 }
+
+
 
 
 //limpia el carrito al apretar finalizar compra
@@ -100,8 +114,6 @@ btnFinalizar.onclick = () => {
    document.getElementById("carrito-productos").innerHTML = "";
 
 
-  
-
 //cartel de gracias por la compra
 setTimeout(() =>{
   Swal.fire({
@@ -109,20 +121,19 @@ setTimeout(() =>{
   icon: 'success',
   title: 'Gracias por su compra',
   showConfirmButton: false,
-})}, 2000);
+})}, 100);
 
   
+let precioAcumulado = carrito.reduce ((acumulador,producto) => acumulador-producto.precio,0);
+
+  precioTotal.innerText ="Total a pagar : $"+ precioAcumulado;
+
 
 //remueve los datos del storage al finalizar la compra
 localStorage.removeItem("carrito");
 
-actualizarTotal();
-
-}
 
 
-function actualizarTotal() {
-     document.getElementById("totalCarrito").innerText = "";
 }
 
 
